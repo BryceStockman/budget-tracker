@@ -25,7 +25,7 @@ request.onerror = ({ target }) => {
   console.log(target.errorCode);
 };
 
-function saveTransaction(transaction) {
+function saveRecord(transaction) {
   const moneyTransfer = DB.transaction(['pending'], 'readwrite');
   const store = moneyTransfer.objectStore('pending');
   store.add(transaction);
